@@ -1,5 +1,6 @@
 ## NBA Player Performance Prediction and Lineup Optimization
-Prediction of NBA player performance defined as Fantasy Points by Draft Kings
+Prediction of NBA player performance defined as Fantasy Points by Draft Kings.
+This project was done as part of Machine Learning Engineer Nanodegree by Udacity. See the final report [here](https://github.com/KengoA/fantasy-basketball/blob/master/report.pdf) for overview.
 
 This project consists of 7 Jupyter notebooks and functionalities are described below.
 
