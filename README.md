@@ -13,7 +13,7 @@ This project consists of 7 Jupyter notebooks and functionalities are described b
 
   * 5.modeling.ipynb comparatively examines the baseline model, linear regression, gradient boosting, and deep learning models with different specifications with 5-fold cross validation. Predictions for games in the month of March 2018 are written into a csv file.
 
-  * 6.lineup_optmisation.ipynb uses Genetic Algorithms to select best combinations of players on a given set of games ans predictions. Performance of the lineups chosen by the algorithm against other DraftKings users is examined for contests held in March, 2018. Predictions from the baseline model and final model are compared to the actual performance.
+  * 6.lineup_optmisation.ipynb uses Genetic Algorithms to select best combinations of players on a given set of games ans predictions. Performance of the lineups chosen by the algorithm against other DraftKings users is examined for contests held in March, 2018. Note that the contest data is manually obtained from Rotogrindrs' ResultsDB page without scraping. Predictions from the baseline model and final model are compared to the actual performance.
 
   * 7.robustness_check.ipynb checks the final model's robustness and statistical significant using Gaussian noise addition and t-test.
 
