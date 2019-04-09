@@ -23,25 +23,3 @@ This project consists of 7 Jupyter notebooks and functionalities are described b
 
 This project is written in Python 3.6.3 as of May 21st, 2018, using Anaconda 4.4.0 (64-bit).
 Main procedures are coded and explained in markdown using Jupyter Notebook. Although not requred, jupyter nbextentions are highly recommended for convenience and visibility (see link). Useful extensions are Codefolding, ExecuteTime, Collapsible Headings, and Variable Inspector. http://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html
-
-Below is an alphabetical list of all libraries requred. The indented lines show the dependencies of the above line.Tenforflow backend is used for keras. pip3 is recommended for installation of libraries. (*) indicates dependencies of the preceding library.
-
-bs4
-colorlover
-datetime
-glob
-keras
-*pyyaml, tensorflow, six
-numpy
-matplotlib
-*numpy, six, python-dateutil, pytz, cycler, pyparsing
-os
-pandas
-*pytz, numpy, python-dateutil
-pandas_profiling
-plotly
-seaborn
-tqdm
-urllib
-sklearn
-*numpy, scipy, scikit-learn
