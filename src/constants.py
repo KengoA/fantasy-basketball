@@ -1,7 +1,13 @@
 import os
 
 DATA_DIR = os.path.join(os.getcwd().replace('/src', ''), 'data')
-SECONDS_SLEEP = 0.3  # for scraping
+
+# Scraping
+SECONDS_SLEEP = 1
+
+# Plotly Credentials
+PLOTLY_USERNAME = 'your_username'
+PLOTLY_API_KEY = 'your_api_key'
 
 SEASON_DATES = {
     '2014-15': ['20141028', '20150415'],

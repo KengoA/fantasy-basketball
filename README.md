@@ -15,6 +15,10 @@ Given the complexity of the series structure and difference in nature, we won't 
 
 ### Exploratory Data Analysis
 
+The key to select a good fantasy lineup is to identify players that are consistent performers. This basic intuition comes from [Modern Portfolio Theory](https://www.investopedia.com/terms/m/modernportfoliotheory.asp), and the following scatter plot looks at the relationship between risk and return, where return is the average fantasy points over a given range of games (in this case, past 10 games) and risk is its standard deviation. For a given level of risk, a player with a better return is considered to be superior. The plot is based on the late 2018-19 season statistics, where Lebron James with a 10-game average of a whopping 58.1 fantasy points and a 7.4 standard deviation. In general, players on the outer left of the cluster are considered as good assets with low risk and high return.
+
+![10-game risk-return](assets/risk-return.gif)
+
 ### Project Structure
 
 This project consists of 7 Jupyter notebooks and functionalities are described below.
