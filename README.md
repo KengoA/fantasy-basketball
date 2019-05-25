@@ -3,7 +3,15 @@
 Prediction of NBA player performance defined as Fantasy Points by Draft Kings.
 This project was conducted and approved by a reviewer as part of Machine Learning Engineer Nanodegree by Udacity. See the final report [here](https://github.com/KengoA/fantasy-basketball/blob/master/report.pdf) for overview.
 
-### This project is under major refactoring as of May 2019
+### [This project is under major refactoring as of May 2019]
+
+### Project Outline
+
+The end goal of this project is to generate a series of lineups for a fantasy basketball website [DraftKings](https://www.draftkings.com/). To achieve that, we'll scrape player statististics from each regular season game starting in the 2014-15 season as well as past fantasy salary information. First, we'll build a predictive model for player performance, and then we will use genetic algorithm to construct fantasy lineups to maximize the total fantasy points while satisfying the salary constraint.
+
+### Exploratory Data Analysis
+
+### Project Structure
 
 This project consists of 7 Jupyter notebooks and functionalities are described below.
 
