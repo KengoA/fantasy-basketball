@@ -5,9 +5,13 @@ This project was conducted and approved by a reviewer as part of Machine Learnin
 
 ### [This project is under major refactoring as of May 2019]
 
-### Project Outline
+### What We'll Do
 
 The end goal of this project is to generate a series of lineups for a fantasy basketball website [DraftKings](https://www.draftkings.com/). To achieve that, we'll scrape player statististics from each regular season game starting in the 2014-15 season as well as past fantasy salary information. First, we'll build a predictive model for player performance, and then we will use genetic algorithm to construct fantasy lineups to maximize the total fantasy points while satisfying the salary constraint.
+
+### What We Won't Do
+
+Given the complexity of the series structure and difference in nature, we won't be considering playoff games. In addition, a major factor omitted from our analysis is the opponent's defensive ability as a team or at a givne position (for instance, Paul George is excellent at stealing the ball), which arguably is one of the most important factors of the game. Tackling this aspect will be an easy improvement to this project.
 
 ### Exploratory Data Analysis
 
