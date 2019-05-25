@@ -1,9 +1,8 @@
 ## NBA Player Performance Prediction and Lineup Optimization
 
-Prediction of NBA player performance defined as Fantasy Points by Draft Kings.
-This project was conducted and approved by a reviewer as part of Machine Learning Engineer Nanodegree by Udacity. See the final report [here](https://github.com/KengoA/fantasy-basketball/blob/master/report.pdf) for overview.
+Prediction of NBA player performance defined as Fantasy Points by Draft Kings. This capstone project was conducted and approved by a reviewer as part of Machine Learning Engineer Nanodegree by Udacity. See the final report [here](https://github.com/KengoA/fantasy-basketball/blob/master/report.pdf) for details.
 
-### [This project is under major refactoring as of May 2019]
+### [This project is under major refactoring and documentation as of May 2019]
 
 ### What We'll Do
 
@@ -13,9 +12,13 @@ The end goal of this project is to generate a series of lineups for a fantasy ba
 
 Given the complexity of the series structure and difference in nature, we won't be considering playoff games. In addition, a major factor omitted from our analysis is the opponent's defensive ability as a team or at a givne position (for instance, Paul George is excellent at stealing the ball), which arguably is one of the most important factors of the game. Tackling this aspect will be an easy improvement to this project.
 
+### Requirements
+
+Along with libraries specified in [requirements.txt](requirements.txt), you need to sign up with Plotly for free to create interactive visualizations.
+
 ### Exploratory Data Analysis
 
-The key to select a good fantasy lineup is to identify players that are consistent performers. This basic intuition comes from [Modern Portfolio Theory](https://www.investopedia.com/terms/m/modernportfoliotheory.asp), and the following scatter plot looks at the relationship between risk and return, where return is the average fantasy points over a given range of games (in this case, past 10 games) and risk is its standard deviation. For a given level of risk, a player with a better return is considered to be superior. The plot is based on the late 2018-19 season statistics, where Lebron James with a 10-game average of a whopping 58.1 fantasy points and a 7.4 standard deviation. In general, players on the outer left of the cluster are considered as good assets with low risk and high return. Players are color coded based on rough positions of PG, SG, F (SF, PF, SF/PF), and C (PF/C, C).
+The key to select a good fantasy lineup is to identify players that are consistent performers. This basic intuition comes from the [Modern Portfolio Theory](https://www.investopedia.com/terms/m/modernportfoliotheory.asp), and the following scatter plot looks at the relationship between risk and return, where return is the average fantasy points over a given range of games (in this case, past 10 games) and risk is its standard deviation. For a given level of risk (x-axis), a player with a better return is considered to be superior. The plot is based on the late 2018-19 season statistics, where, for instance, Lebron James is shown in the top-left with a 10-game average of a whopping 58.1 fantasy points and a 7.4 standard deviation. In general, players on the outer left of the cluster are considered as good assets with low risk and high return. Players are color-coded based on rough positions of PG, SG, F (SF, PF, SF/PF), and C (PF/C, C). A fully interactive version can be accessed [here](https://plot.ly/~KengoA/12/_10-game-risk-return-relationship/#/).
 
 ![10-game risk-return](assets/risk_return.gif)
 
