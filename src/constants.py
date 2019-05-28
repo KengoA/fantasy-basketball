@@ -27,3 +27,16 @@ DF_VARIABLES = ['Name', 'Date', 'Team',  'FPTS', 'Home', 'W', 'W_PTS', 'L', 'L_P
                 'ORB', 'DRB', 'TRB', 'AST', 'STL', 'BLK', 'TOV', 'PF', 'PTS', 'DD', 'TD',
                 'USG_perc', 'DRtg', 'ORtg', 'AST_perc', 'DRB_perc', 'ORB_perc', 'BLK_perc',
                 'TOV_perc', 'STL_perc', 'eFG_perc']
+
+DF_FEATURES = ['Date', 'Name', 'Team', 'Pos', 'FPTS', 'Salary',
+               # Additional Features
+               'Starter', 'Rest', 'Rota_All', 'Rota_Pos', 'Home',
+               'PG', 'SG', 'F', 'C', 'Value', 'FPTS_std',
+               # Basic Stats with weighted mean
+               'PTS', '3P',  'AST', 'TRB',
+               'STL', 'BLK', 'TOV', 'DD', 'TD',
+               # Additional Stats with weighted mean
+               'MP', 'FT', 'FTA', 'FGA', '3PA', 'DRB', 'ORB',
+               # Advanced Stats with weighted mean
+               'USG_perc', 'DRtg', 'ORtg', 'AST_perc', 'DRB_perc', 'ORB_perc',
+               'BLK_perc', 'TOV_perc', 'STL_perc', 'eFG_perc', 'FG_perc', '3P_perc', 'FT_perc']
