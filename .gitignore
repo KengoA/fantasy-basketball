@@ -2,3 +2,4 @@
 Pipfile
 Pipfile.lock
 .vscode/
+src/__pycache__
