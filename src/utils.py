@@ -2,6 +2,7 @@ import os
 import glob
 import numpy as np
 import pandas as pd
+import lightgbm as lgb
 
 from tqdm import tqdm_notebook as tqdm
 from sklearn.model_selection import train_test_split
@@ -77,36 +78,62 @@ def load_full_dataset(weighting='quad'):
     return X, y
 
 
-def cross_val(reg_base, X, y, nfolds=5, verbose=1):
-    mae_results_train, rmse_results_train = [], []
-    mae_results_valid, rmse_results_valid = [], []
+def cross_val(reg_base, X, y, n_folds=5, isLightGBM=False, params=None, verbose=0):
+    errors = {'MAE': {'train': [], 'valid': []},
+              'RMSE': {'train': [], 'valid': []}}
 
-    for i in tqdm(range(nfolds)):
+    for i in tqdm(range(n_folds)):
         X_train, X_valid, y_train, y_valid = train_test_split(
-            X, y, test_size=1/nfolds, stratify=None, random_state=i)
+            X, y, test_size=1/n_folds, stratify=None, random_state=i)
 
-        reg = reg_base
-        reg.fit(X_train, y_train)
+        if isLightGBM == True:
+            if params == None:
+                return ('Error: Specify parameters for LightGBM')
+            else:
+                d_train = lgb.Dataset(X_train, label=y_train)
+                d_valid = lgb.Dataset(X_valid, label=y_valid)
+                watchlist = [d_valid]
+                reg = lgb.train(params, d_train, watchlist, verbose_eval=1)
 
+        else:
+            reg = reg_base
+            reg.fit(X_train, y_train)
         y_pred_train = reg.predict(X_train)
-        mae_results_train.append(calculate_MAE(y_pred_train, y_train))
-        rmse_results_train.append(calculate_RMSE(y_pred_train, y_train))
+        errors['MAE']['train'].append(calculate_MAE(y_pred_train, y_train))
+        errors['RMSE']['train'].append(calculate_RMSE(y_pred_train, y_train))
 
         y_pred_valid = reg.predict(X_valid)
-        mae_results_valid.append(calculate_MAE(y_pred_valid, y_valid))
-        rmse_results_valid.append(calculate_RMSE(y_pred_valid, y_valid))
+        errors['MAE']['valid'].append(calculate_MAE(y_pred_valid, y_valid))
+        errors['RMSE']['valid'].append(calculate_RMSE(y_pred_valid, y_valid))
+
+        if verbose == 1:
+            print('<--- Training Error ({}/{})--->'.format(i+1, n_folds))
+            print(' MAE: {}'.format(round(errors['MAE']['train'][i], 5)))
+            print('RMSE: {}\n'.format(round(errors['RMSE']['train'][i], 5)))
+
+            print('<--- Validation Error ({}/{}) --->'.format(i+1, n_folds))
+            print(' MAE: {}'.format(round(errors['MAE']['valid'][i], 5)))
+            print('RMSE: {}\n\n'.format(round(errors['RMSE']['valid'][i], 5)))
+
+    return errors
+
+
+def summarize_errors(errors, verbose=0):
+    df_mae = pd.DataFrame(errors['MAE']).T
+    df_rmse = pd.DataFrame(errors['RMSE']).T
+
+    df_mae.columns = ['' for i in df_mae.columns]
+    df_rmse.columns = ['' for i in df_rmse.columns]
+
+    df_mae.index.name = "MAE"
+    df_rmse.index.name = "RMSE"
 
     if verbose == 1:
-        print('[Training Eror]')
-        print(' MAE | Mean: {}, SD: {}'.format(round(np.mean(mae_results_train), 5),
-                                               round(np.std(mae_results_train), 5)))
-        print('RMSE | Mean: {}, SD: {}\n'.format(round(np.mean(rmse_results_train), 5),
-                                                 round(np.std(rmse_results_train), 5)))
+        display(df_mae, df_rmse)
 
-    print('[Validation Error]')
-    print(' MAE | Mean: {}, SD: {}'.format(round(np.mean(mae_results_valid), 5),
-                                           round(np.std(mae_results_valid), 5)))
-    print('RMSE | Mean: {}, SD: {}'.format(round(np.mean(rmse_results_valid), 5),
-                                           round(np.std(rmse_results_valid), 5)))
-
+    print('\n   <--- Validation Errors --->')
+    print('MAE  | Mean: {}, SD: {}'.format(str(round(np.mean(errors['MAE']['valid']), 5)),
+                                           str(round(np.std(errors['MAE']['valid']), 5))))
+    print('RMSE | Mean: {}, SD: {}\n'.format(str(round(np.mean(errors['RMSE']['valid']), 5)),
+                                             str(round(np.std(errors['RMSE']['valid']), 5))))
     return None
