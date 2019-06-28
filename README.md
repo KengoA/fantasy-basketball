@@ -2,7 +2,7 @@
 
 Prediction of NBA player performance defined as Fantasy Points by Draft Kings. This capstone project was conducted and approved by a reviewer as part of Machine Learning Engineer Nanodegree by Udacity. See the final report [here](https://github.com/KengoA/fantasy-basketball/blob/master/report.pdf) for details.
 
-### [This project is under major refactoring and documentation as of May 2019]
+Note that the code was updated since the writing of the report and the content does not necessarily match up. This project is under minor refactoring and documentation as of Jun 2019, feel free to reach out to me via email at kengoarao@outlook.com.
 
 ### What We'll Do
 
@@ -28,20 +28,26 @@ Another important dimension of the game of fantasy basketball is player salary. 
 
 ### Project Structure
 
-This project consists of 7 Jupyter notebooks and functionalities are described below.
+This project consists of 9 Jupyter notebooks and functionalities are described below.
 
-- [1.data_scraping.ipynb](src/1.data_scraping.ipynb) scrapes games data from Basketball-Reference.com and salary and position information from RotoGuru.
+- [01.data_scraping.ipynb](src/01.data_scraping.ipynb) scrapes games data from Basketball-Reference.com and salary and position information from RotoGuru.
 
-- [2.merging_data.ipynb](src/2.preprocessing.ipynb) merges the two datasets with name standardisation and preliminary preprocessing of data such as calculation of FPTS based on the key statistics.
+- [02.merging_data.ipynb](src/02.preprocessing.ipynb) merges the two datasets with name standardisation and preliminary preprocessing of data such as calculation of FPTS based on the key statistics.
 
-- [3.exploratory_analysis.ipynb](src/3.exploratory_analysis.ipynb) visually explores relationships between; salary and actual FPTS and; expected FPTS and standard deviation of the past 10 games.
+- [03.exploratory_analysis.ipynb](src/03.exploratory_analysis.ipynb) visually explores relationships between; salary and actual FPTS and; expected FPTS and standard deviation of the past 10 games.
 
-- [4.feature_engineering.ipynb](src/4.feature_engineering.ipynb) constructs the baseline model with simple average along with additional three datasets with weighted average, where several features are engineered and incorporated.
+- [04.feature_engineering.ipynb](src/04.feature_engineering.ipynb) constructs the baseline model with simple average along with additional three datasets with weighted average, where several features are engineered and incorporated.
 
-- [5.modeling.ipynb](src/5.modeling.ipynb) comparatively examines the baseline model, linear regression, gradient boosting, and deep learning models with different specifications with 5-fold cross validation. Predictions for games in the month of March 2018 are written into a csv file.
+- [05.baseline_models.ipynb](src/05.baseline_models.ipynb) sets up the baseline model with simple season average adopted by DraftKings and linear regression with feature selection models. For notebooks 06-08, we use 5-fold cross validation to approximate model errors.
 
-- [6.lineup_optmisation.ipynb](src/6.lineup_optmisation.ipynb) uses Genetic Algorithms to select best combinations of players on a given set of games ans predictions. Performance of the lineups chosen by the algorithm against other DraftKings users is examined for contests held in March, 2018. Note that the contest data is manually obtained from Rotogrindrs' ResultsDB page without scraping. Predictions from the baseline model and final model are compared to the actual performance.
+- [06.lightgbm_bayesian_optimization.ipynb](src/06.lightgbm_bayesian_optimization.ipynb) uses bayesian optimisation method to find the best parameters for a boosting model using lightGBM. Parameters and their results are saved in a text file.
 
-- [7.robustness_check.ipynb](src/7.robustness_check.ipynb) checks the final model's robustness and statistical significant using Gaussian noise addition and t-test.
+- [07.neural_networks.ipynb](src/07.neural_networks.ipynb) constructs three neural network models using keras, and saves model weights only when there was an improvement. While deep learning models might not suit this dataset of limited size, it shows improvement compared to boosting models.
+  ![learning](assets/learning.png)
+
+- [08.predictions.ipynb](src/08.predictions.ipynb) trains on the whole dataset except for the month of March 2019, where each contest's cashline for double up was manually obtained from RotoGrinders. Inference is made on this test data from March 2019.
+
+- [09.lightgbm_bayesian_optimization.ipynb](src/06.lightgbm_bayesian_optimization.ipynb) uses Genetic Algorithms to select best combinations of players on a given set of games ans predictions. Performance of the lineups chosen by the algorithm against other DraftKings users is examined for contests held in March, 2019. Note that the contest data is manually obtained from Rotogrindrs' ResultsDB page without scraping. Predictions from the baseline model and final model are compared to the actual performance. The following figure shows the optimal lineup this model returns, with differences between the actual FPTS and predicted FPTS with neural network and baseline models.
+  ![lineup](assets/lineup.png)
 
 Main procedures are coded and explained in markdown using Jupyter Notebook. Although not requred, jupyter nbextentions are highly recommended for convenience and visibility (see link). Useful extensions are Codefolding, ExecuteTime, Collapsible Headings, and Variable Inspector. http://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html
