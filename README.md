@@ -43,11 +43,13 @@ This project consists of 9 Jupyter notebooks and functionalities are described b
 - [06.lightgbm_bayesian_optimization.ipynb](src/06.lightgbm_bayesian_optimization.ipynb) uses bayesian optimisation method to find the best parameters for a boosting model using lightGBM. Parameters and their results are saved in a text file.
 
 - [07.neural_networks.ipynb](src/07.neural_networks.ipynb) constructs three neural network models using keras, and saves model weights only when there was an improvement. While deep learning models might not suit this dataset of limited size, it shows improvement compared to boosting models.
+
   ![learning](assets/learning.png)
 
 - [08.predictions.ipynb](src/08.predictions.ipynb) trains on the whole dataset except for the month of March 2019, where each contest's cashline for double up was manually obtained from RotoGrinders. Inference is made on this test data from March 2019.
 
 - [09.lightgbm_bayesian_optimization.ipynb](src/06.lightgbm_bayesian_optimization.ipynb) uses Genetic Algorithms to select best combinations of players on a given set of games ans predictions. Performance of the lineups chosen by the algorithm against other DraftKings users is examined for contests held in March, 2019. Note that the contest data is manually obtained from Rotogrindrs' ResultsDB page without scraping. Predictions from the baseline model and final model are compared to the actual performance. The following figure shows the optimal lineup this model returns, with differences between the actual FPTS and predicted FPTS with neural network and baseline models.
+
   ![lineup](assets/lineup.png)
 
 Main procedures are coded and explained in markdown using Jupyter Notebook. Although not requred, jupyter nbextentions are highly recommended for convenience and visibility (see link). Useful extensions are Codefolding, ExecuteTime, Collapsible Headings, and Variable Inspector. http://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html
