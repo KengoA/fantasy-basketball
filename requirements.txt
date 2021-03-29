@@ -77,7 +77,7 @@ protobuf==3.8.0
 ptyprocess==0.6.0
 py==1.8.0
 pycodestyle==2.5.0
-Pygments==2.4.2
+Pygments==2.7.4
 pylint==2.3.1
 pyparsing==2.4.0
 pyrsistent==0.15.2
