@@ -1,5 +1,5 @@
 
-Note: For the upcoming 2021-22 season, I'm building a web application with all functionalities demonstrated in this repo + extra features. This repositoty itself will also go through major refactoring from June 2021.
+Note (June 2021): For the upcoming 2021-22 season, I'm building a web application with all functionalities demonstrated in this repo + extra features. This repository itself will also go through major refactoring.
 
 ## NBA Player Performance Prediction and Lineup Optimization
 
