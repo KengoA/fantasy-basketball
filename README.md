@@ -1,3 +1,6 @@
+
+Note: For the upcoming 2021-22 season, I'm building a web application with all functionalities demonstrated in this repo + extra features. This repositoty itself will also go through major refactoring from June 2021.
+
 ## NBA Player Performance Prediction and Lineup Optimization
 
 Prediction of NBA player performance defined as Fantasy Points by Draft Kings. This capstone project was conducted and approved by a reviewer as part of Machine Learning Engineer Nanodegree by Udacity. See the final report [here](https://github.com/KengoA/fantasy-basketball/blob/master/report.pdf) for details.
