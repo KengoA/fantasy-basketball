@@ -68,7 +68,7 @@ pexpect==4.7.0
 phik==0.9.8
 pickleshare==0.7.5
 pip-review==1.0
-pipenv==2018.11.26
+pipenv==2022.1.8
 plotly==3.10.0
 pluggy==0.12.0
 prometheus-client==0.7.1
