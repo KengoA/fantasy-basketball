@@ -1,5 +1,5 @@
 
-Note (June 2021): For the upcoming 2021-22 season, I'm building a web application with all functionalities demonstrated in this repo + extra features. This repository itself will also go through major refactoring.
+Note (March 2022) This repository is under major refactoring.
 
 ## NBA Player Performance Prediction and Lineup Optimization
 
@@ -13,7 +13,7 @@ The end goal of this project is to generate a series of lineups for a fantasy ba
 
 ### What We Won't Do
 
-Given the complexity of the series structure and difference in nature, we won't be considering playoff games. In addition, a major factor omitted from our analysis is the opponent's defensive ability as a team or at a givne position (for instance, Paul George is excellent at stealing the ball), which arguably is one of the most important factors of the game. Tackling this aspect will be an easy improvement to this project.
+Given the complexity of the series structure and difference in nature, we won't be considering playoff games. In addition, a major factor omitted from our analysis is the opponent's defensive ability as a team or at a given position (for instance, Paul George is excellent at stealing the ball), which arguably is one of the most important factors of the game. Tackling this aspect will be an easy improvement to this project.
 
 ### Requirements
 
