@@ -51,7 +51,7 @@ MarkupSafe==1.1.1
 matplotlib==3.1.0
 mccabe==0.6.1
 missingno==0.4.1
-mistune==0.8.4
+mistune==2.0.3
 mock==3.0.5
 more-itertools==7.1.0
 nbconvert==5.5.0
