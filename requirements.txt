@@ -112,7 +112,7 @@ virtualenv==16.6.1
 virtualenv-clone==0.5.3
 wcwidth==0.1.7
 webencodings==0.5.1
-Werkzeug==0.15.4
+Werkzeug==0.15.5
 widgetsnbextension==3.4.2
 wrapt==1.11.2
 zipp==0.5.1
