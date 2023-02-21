@@ -14,7 +14,9 @@ URL_BBREF = "https://www.basketball-reference.com"
 BOXSCORE_FORMAT = "/boxscores/?month={month}&day={day}&year={year}"
 
 # Scrating RotoGuru
-URL_ROTO_FORMAT = "http://rotoguru1.com/cgi-bin/hyday.pl?mon={month}&day={day}&year={year}&game=dk"
+URL_ROTO_FORMAT = (
+    "http://rotoguru1.com/cgi-bin/hyday.pl?mon={month}&day={day}&year={year}&game=dk"
+)
 
 
 SEASON_DATES = {
