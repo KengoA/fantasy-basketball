@@ -1,5 +1,6 @@
 
-Note (March 2022) This repository is under major refactoring.
+Notes:
+  - Feb 2023: I published a python package called **fantasy_ga** for generating fantasy lineups with Genetic Algorithm, check it out at https://pypi.org/project/fantasy-ga/. This package will be updated to incorporate this library as well as other updates and bug fixes.
 
 ## NBA Player Performance Prediction and Lineup Optimization
 
@@ -33,25 +34,25 @@ Another important dimension of the game of fantasy basketball is player salary. 
 
 This project consists of 9 Jupyter notebooks and functionalities are described below, where the second half consists of construcing machine leanring models and making inference, and optimising lineups for DraftKings.
 
-- [01.data_scraping.ipynb](src/01.data_scraping.ipynb) scrapes games data from Basketball-Reference.com and salary and position information from RotoGuru.
+- [1_data_scraping.ipynb](notebooks/1_data_scraping.ipynb) scrapes games data from Basketball-Reference.com and salary and position information from RotoGuru.
 
-- [02.merging_data.ipynb](src/02.preprocessing.ipynb) merges the two datasets with name standardisation and preliminary preprocessing of data such as calculation of FPTS based on the key statistics.
+- [2_merging_data.ipynb](notebooks/2_merging_data.ipynb) merges the two datasets with name standardisation and preliminary preprocessing of data such as calculation of FPTS based on the key statistics.
 
-- [03.exploratory_analysis.ipynb](src/03.exploratory_analysis.ipynb) visually explores relationships between; salary and actual FPTS and; expected FPTS and standard deviation of the past 10 games.
+- [3_exploratory_analysis.ipynb](notebooks/3_exploratory_analysis.ipynb) visually explores relationships between; salary and actual FPTS and; expected FPTS and standard deviation of the past 10 games.
 
-- [04.feature_engineering.ipynb](src/04.feature_engineering.ipynb) constructs the baseline model with simple average along with additional three datasets with weighted average, where several features are engineered and incorporated.
+- [4_feature_engineering.ipynb](notebooks/4_feature_engineering.ipynb) constructs the baseline model with simple average along with additional three datasets with weighted average, where several features are engineered and incorporated.
 
-- [05.baseline_models.ipynb](src/05.baseline_models.ipynb) sets up the baseline model with simple season average adopted by DraftKings and linear regression with feature selection models. For notebooks 06-08, we use 5-fold cross validation to approximate model errors.
+- [5_baseline_models.ipynb](notebooks/5_baseline_models.ipynb) sets up the baseline model with simple season average adopted by DraftKings and linear regression with feature selection models. For notebooks 06-08, we use 5-fold cross validation to approximate model errors.
 
-- [06.lightgbm_bayesian_optimization.ipynb](src/06.lightgbm_bayesian_optimization.ipynb) uses bayesian optimisation method to find the best parameters for a boosting model using lightGBM. Parameters and their results are saved in a text file.
+- [6_lightgbm_bayesian_optimization.ipynb](notebooks/6_lightgbm_bayesian_optimization.ipynb) uses bayesian optimisation method to find the best parameters for a boosting model using lightGBM. Parameters and their results are saved in a text file.
 
-- [07.neural_networks.ipynb](src/07.neural_networks.ipynb) constructs three neural network models using keras, and saves model weights only when there was an improvement. While deep learning models might not suit this dataset of limited size, it shows improvement compared to boosting models.
+- [7_neural_networks.ipynb](notebooks/7_neural_networks.ipynb) constructs three neural network models using keras, and saves model weights only when there was an improvement. While deep learning models might not suit this dataset of limited size, it shows improvement compared to boosting models.
 
   ![learning](assets/learning.png)
 
-- [08.predictions.ipynb](src/08.predictions.ipynb) trains on the whole dataset except for the month of March 2019, where each contest's cashline for double up was manually obtained from RotoGrinders. Inference is made on this test data from March 2019.
+- [8_predictions.ipynb](notebooks/8_predictions.ipynb) trains on the whole dataset except for the month of March 2019, where each contest's cashline for double up was manually obtained from RotoGrinders. Inference is made on this test data from March 2019.
 
-- [09.lightgbm_bayesian_optimization.ipynb](src/06.lightgbm_bayesian_optimization.ipynb) uses Genetic Algorithms to select best combinations of players on a given set of games ans predictions. Performance of the lineups chosen by the algorithm against other DraftKings users is examined for contests held in March, 2019. Note that the contest data is manually obtained from Rotogrindrs' ResultsDB page without scraping. Predictions from the baseline model and final model are compared to the actual performance. The following figure shows the optimal lineup this model returns, with differences between the actual FPTS and predicted FPTS with neural network and baseline models.
+- [9_lineup_GA_optimization.ipynb](notebooks/9_lineup_GA_optimization.ipynb) uses Genetic Algorithms to select best combinations of players on a given set of games ans predictions. Performance of the lineups chosen by the algorithm against other DraftKings users is examined for contests held in March, 2019. Note that the contest data is manually obtained from Rotogrindrs' ResultsDB page without scraping. Predictions from the baseline model and final model are compared to the actual performance. The following figure shows the optimal lineup this model returns, with differences between the actual FPTS and predicted FPTS with neural network and baseline models.
 
   ![lineup](assets/lineup.png)
 
