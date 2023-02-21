@@ -22,6 +22,7 @@ debugpy==1.6.6
 decorator==5.1.1
 defusedxml==0.7.1
 executing==1.2.0
+fantasy-ga==0.1.0
 fastjsonschema==2.16.2
 fonttools==4.38.0
 fqdn==1.5.1
@@ -66,7 +67,7 @@ nest-asyncio==1.5.6
 networkx==3.0
 notebook==6.5.2
 notebook_shim==0.2.2
-numpy==1.23.5
+numpy==1.24.2
 packaging==23.0
 pandas==1.5.3
 pandas-profiling==3.6.6
