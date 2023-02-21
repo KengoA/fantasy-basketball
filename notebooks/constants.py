@@ -12,6 +12,7 @@ PLOTLY_API_KEY = "your_api_key"
 # Scraping Basketball Reference
 URL_BBREF = "https://www.basketball-reference.com"
 BOXSCORE_FORMAT = "/boxscores/?month={month}&day={day}&year={year}"
+SEARCH_FORMAT = "/search/search.fcgi?hint=&search={term}&pid=&idx="
 
 # Scrating RotoGuru
 URL_ROTO_FORMAT = (
