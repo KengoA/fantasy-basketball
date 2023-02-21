@@ -1,10 +1,10 @@
 
 Notes:
-  - Feb 2023: I published a python package called **fantasy_ga** for generating fantasy lineups with Genetic Algorithm, check it out at https://pypi.org/project/fantasy-ga/. This package will be updated to incorporate this library as well as other updates and bug fixes.
+  - Feb 2023: I published a Python package called **fantasy_ga** for generating fantasy lineups with Genetic Algorithm, check it out at https://pypi.org/project/fantasy-ga/. This repository will be updated to incorporate this library as well as other updates and bug fixes.
 
 ## NBA Player Performance Prediction and Lineup Optimization
 
-Prediction of NBA player performance defined as Fantasy Points by Draft Kings. This capstone project was conducted and approved by a reviewer as part of Machine Learning Engineer Nanodegree by Udacity. See the final report [here](https://github.com/KengoA/fantasy-basketball/blob/master/report.pdf) for details.
+Prediction of NBA player performance defined as Fantasy Points by Draft Kings. This capstone project was originally conducted and approved by a reviewer as part of Machine Learning Engineer Nanodegree by Udacity. See the final report [here](https://github.com/KengoA/fantasy-basketball/blob/master/report.pdf) for details.
 
 Note that the code was updated since the writing of the report and the content does not necessarily match up. This project is under minor refactoring and documentation as of Jun 2019, feel free to reach out to me via email at kengo@hey.com.
 
